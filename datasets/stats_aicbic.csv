@@ -1,0 +1,7 @@
+dataset,modelo,k,n,lnL,priors_en_lnL,notas
+CMB-LiteBIRD,LCDM,6,2508,-1251.0,no,"Baseline model, χ²=2502.0"
+CMB-LiteBIRD,PDO,7,2508,-1246.6,si,"PDO model, χ²=2493.2, ΔAIC=-6.8, ΔBIC=-0.9"
+BAO-eBOSS,LCDM,6,173,-83.5,no,"Baseline model, χ²=167.0"
+BAO-eBOSS,PDO,7,173,-83.4,si,"PDO model, χ²=166.7, ΔAIC=1.8, ΔBIC=4.953"
+SNe-Pantheon+,LCDM,6,1701,-847.5,no,"Baseline model, χ²=1695.0"
+SNe-Pantheon+,PDO,7,1701,-845.4,si,"PDO model, χ²=1690.8, ΔAIC=-2.2, ΔBIC=3.245"

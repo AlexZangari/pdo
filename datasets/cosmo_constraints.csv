@@ -1,0 +1,3 @@
+observable,z_min,z_max,metrica,cota_valor,unidad,referencia,notas
+Polarimetria-CMB,0,1100,beta_rot,0.5,deg,"Planck PR4 2023/ACT DR6 2025","Cota conservadora de rotación óptica"
+BBN,1e8,1e9,Delta_me_over_me,0.013,adim,"Seto & Toda 2023; PDG 2022","Variación de masa del electrón"
