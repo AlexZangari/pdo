@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Teoría PDO — Versión 1.0 (borrador público)"
+message: "Si utilizas este trabajo, por favor cita esta referencia."
+authors:
+  - family-names: Ramírez
+    given-names: Alejandro De Jesús
+  - name: Equipo El Humeante
+version: '1.0'
+license: CC-BY-4.0
