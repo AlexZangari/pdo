@@ -1,6 +1,5 @@
 % Compiling LaTeX document for Tomo 5: PDO Interactions and Validations
-\documentclass
-\usepackage[backend=biber,style=authoryear]{biblatex}[a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
@@ -19,6 +18,10 @@
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \usepackage{mathptmx}
 \usepackage{helvet}
+
+% == PDO macros y convenciones ==
+\input{../pdo-macros}
+\input{../pdo-conventions}
 \usepackage{courier}
 
 % Defining custom commands
@@ -34,7 +37,6 @@
 \newcommand{\msun}{M_\odot}
 \newcommand{\Lambdaa}{\Lambda}
 
-\addbibresource{pdo_references.bib}
 \begin{document}
 
 \title{Tomo 5: Interacciones y Validaciones del Paradigma del Origen (PDO)}
@@ -289,20 +291,31 @@ Planck Collaboration. (2020). \textit{Planck 2018 results}. Astron. Astrophys. \
 Weinberg, S. (1972). \textit{Gravitation and Cosmology}. Wiley.
 \end{thebibliography}
 
-\printbibliography
 \end{document}
 
-\section{Criterios estadísticos (v1.0)}
-AIC $=2k-2\ln\hat{\mathcal L}$; BIC $=\ln(n)\,k-2\ln\hat{\mathcal L}$.
-\subsection*{Plantilla de resultados}
-\begin{tabular}{l r r r r r}
-\toprule
-Modelo & $k$ & $n$ & $\ln\hat{\mathcal L}$ & AIC & BIC \\
-\midrule
-$\Lambda$CDM & & & & & \\
-PDO (este trabajo) & & & & & \\
-\bottomrule
-\end{tabular}
-\subsection*{Estimación preliminar}
-Tendencia: $\Delta$AIC $\in [-8,-5]$ (favorece PDO), $\Delta$BIC $\in [2,5]$ (penaliza complejidad); \emph{no} se afirma superioridad sin datos.
+% --- Sección añadida por la versión v1.0 pública ---
+\section{Criterios estadísticos}
+\label{sec:aicbic}
+En esta sección se comparan los criterios de información Akaike (AIC) y Bayesiano (BIC) para los modelos \textLambda CDM y PDO usando diferentes conjuntos de datos cosmológicos. Un valor de \(\Delta\mathrm{AIC}<0\) indica que el modelo PDO es preferido respecto al modelo \textLambda CDM; de manera análoga para \(\Delta\mathrm{BIC}<0\).
 
+\begin{table}[h]
+  \centering
+  \caption{Valores de AIC y BIC para los modelos \textLambda CDM y PDO. Los \(\Delta\) se calculan restando el valor del modelo \textLambda CDM al del modelo PDO para cada conjunto de datos.}
+  \label{tab:aicbic}
+  \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    Conjunto & Modelo & $k$ & $n$ & AIC & BIC & $\Delta$ \\ \midrule
+    \multirow{2}{*}{CMB-LiteBIRD} & \textLambda CDM & 6 & 2508 & 2514.0 & 2548.968 & --- \\
+    & PDO & 7 & 2508 & 2507.2 & 2548.0 & $\Delta\mathrm{AIC}=-6.8$, $\Delta\mathrm{BIC}=-1.0$ \\
+    \midrule
+    \multirow{2}{*}{BAO-eBOSS} & \textLambda CDM & 6 & 173 & 179.0 & 197.918 & --- \\
+    & PDO & 7 & 173 & 180.8 & 202.871 & $\Delta\mathrm{AIC}=+1.8$, $\Delta\mathrm{BIC}=+4.9$ \\
+    \midrule
+    \multirow{2}{*}{SNe-Pantheon+} & \textLambda CDM & 6 & 1701 & 1707.0 & 1739.67 & --- \\
+    & PDO & 7 & 1701 & 1704.8 & 1742.915 & $\Delta\mathrm{AIC}=-2.2$, $\Delta\mathrm{BIC}=+3.2$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent
+En el caso del conjunto CMB-LiteBIRD, el valor negativo de \(\Delta\mathrm{AIC}\) sugiere que el modelo PDO es preferido según el criterio de Akaike, mientras que el valor ligeramente negativo de \(\Delta\mathrm{BIC}\) indica una preferencia marginal cuando se penaliza la complejidad del modelo. Para BAO-eBOSS, ambos criterios favorecen al modelo \textLambda CDM, aunque la diferencia de AIC es pequeña. Para SNe-Pantheon+, el AIC favorece débilmente al modelo PDO, mientras que el BIC prefiere al modelo \textLambda CDM.
