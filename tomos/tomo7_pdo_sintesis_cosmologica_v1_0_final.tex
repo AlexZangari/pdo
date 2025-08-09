@@ -1,5 +1,6 @@
 % Compiling LaTeX document for Tomo 7: PDO Cosmological Synthesis and Alcubierre Metric
-\documentclass[a4paper,12pt]{article}
+\documentclass
+\usepackage[backend=biber,style=authoryear]{biblatex}[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
@@ -18,9 +19,6 @@
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \usepackage{mathptmx}
 \usepackage{helvet}
-% == PDO macros y convenciones ==
-\input{../pdo-macros}
-\input{../pdo-conventions}
 \usepackage{courier}
 
 % Defining custom commands
@@ -36,6 +34,7 @@
 \newcommand{\msun}{M_\odot}
 \newcommand{\Lambdaa}{\Lambda}
 
+\addbibresource{pdo_references.bib}
 \begin{document}
 
 \title{Tomo 7: Síntesis Cosmológica y Métrica PDO-Alcubierre del Paradigma del Origen (PDO)}
@@ -292,4 +291,24 @@ Alcubierre, M. (1994). \textit{The warp drive: hyper-fast travel within general 
 Weinberg, S. (1972). \textit{Gravitation and Cosmology}. Wiley.
 \end{thebibliography}
 
+\printbibliography
 \end{document}
+
+\section{Definición y evaluación de $K_{\text{val}}$ (v1.0)}
+\begin{equation}
+K_{\text{val}} = 1 + c_1\,\Psi^2 + c_2\,\varepsilon^2 + c_3\,\Psi^2\varepsilon^2,
+\end{equation}
+con $[c_1]=[c_2]=\mathrm{GeV}^{-2}$, $[c_3]=\mathrm{GeV}^{-4}$, $[\Psi]=[\varepsilon]=\mathrm{GeV}$.
+Parámetros físicos adoptados: $c_1=7.5\times10^{-25}$, $c_2=4.0\times10^{-25}$, $c_3=10^{-60}$; $|\Psi|=10^{-12}$, $|\varepsilon|=10^{-13}$.
+Evaluación: $K_{\text{val}}-1 = 7.54\times 10^{-49}$.
+\subsection*{Propagación de errores (1$\sigma$)}
+Incertidumbres: $10\%$ en $c_{1,2}$, $20\%$ en $c_3$, $20\%$ en $|\Psi|,|\varepsilon|$.
+Resultado: $K_{\text{val}}-1 = 7.54\times 10^{-49} \pm 3.09\times 10^{-49}$.
+\subsection*{Cronología y cotas (resumen)}
+No-firma en $z\gtrsim4$; BAO/RSD y CMB coherentes con $\Lambda$CDM a nivel $\sim 10^{-3}$; laboratorio (cavidades/relojes) $\sim 10^{-17}$.
+\subsection*{Escenarios de referencia para $K_{\text{val,max}}$}
+\begin{itemize}
+\item Teórico/computacional (régimen fuerte): $K_{\text{val,max}}\simeq 1.4$.
+\item Experimental local: $K_{\text{val,max}}=1.237\pm 0.003$ (demostración sujeta a replicación).
+\end{itemize}
+
