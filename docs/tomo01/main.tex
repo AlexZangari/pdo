@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage{graphicx,xcolor}
+\usepackage[acronym]{glossaries}
+\usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
+
+\input{../pdo-conventions.tex}
+\addbibresource{../bib/references.bib}
+\makeglossaries
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\sisetup{detect-all, per-mode=symbol, separate-uncertainty=true}
+
+\newglossaryentry{eps}{name={\ensuremath{\eps}}, description={Operador de grieta (simetría local efectiva)}}
+
+\title{Tomo 1 — Fundamentos del Paradigma del Origen}
+\author{Proyecto PDO}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Introducción}\label{sec:intro}
+Motivación y esquema general del paradigma.
+
+\section{Notación y Unidades}\label{sec:units}
+Signatura \(\PDOsign\). Unidades naturales \(\hbar=c=k_B=1\); \(G\) explícito cuando aplique. Glifo único \(\eps\).
+
+\section{Ecuación Base}\label{sec:eqbase}
+Definimos la ecuación base del campo \(\psi(x,t)\) y sus términos efectivos.
+\begin{equation}
+\mathcal{E}[\psi;\eps] = 0.
+\label{eq:base}
+\end{equation}
+Referencia interna a \Cref{eq:base}.
+
+\section{Observables}\label{sec:obs}
+Lista de observables y vínculos con \(\eps\). Véase Latentaxis v1 en el Tomo 2.
+
+\section{Glosario}
+\printglossaries
+
+\section{Bibliografía}
+Citamos trabajos base \cite{Planck2018,Alcubierre1994,EFTbook}.
+\printbibliography
+
+\end{document}
