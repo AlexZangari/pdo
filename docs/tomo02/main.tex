@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage{graphicx,xcolor}
+\usepackage[acronym]{glossaries}
+\usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
+
+\input{../pdo-conventions.tex}
+\addbibresource{../bib/references.bib}
+\makeglossaries
+
+\sisetup{detect-all, per-mode=symbol, separate-uncertainty=true}
+\newacronym{ULDM}{ULDM}{Ultra-Light Dark Matter}
+
+\title{Tomo 2 — Materia Ultraligera y Observables Relacionales}
+\author{Proyecto PDO}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Convenciones y Unidades}
+Signatura \(\PDOsign\). Unidades naturales \(\hbar=c=k_B=1\); \(G\) explícito cuando aplique.
+Glifo único \(\eps\) para el operador de grieta.
+
+\section{Modelo ULDM}
+Sea un campo escalar \(\phi\) con potencial \(V(\phi)\).
+La masa \,m_\phi se reportará en \si{\electronvolt} (\textbf{eV}) de forma consistente.
+\begin{equation}
+\mathcal{L} = \tfrac{1}{2}\partial_\mu\phi\,\partial^\mu\phi - V(\phi).
+\label{eq:uldm-lagrangian}
+\end{equation}
+
+\section{Escalas y Dimensionalidad}
+Usamos \texttt{siunitx}:
+\(\,m_\phi = \SI{1e-22}{\electronvolt}\) (ejemplo típico de literatura).
+Para conversiones previas en \si{\giga\electronvolt} usar \(1~\si{\giga\electronvolt}=10^9~\si{\electronvolt}\).
+
+\section{Acoplamientos efectivos y \texorpdfstring{\(\eps\)}{epsilon}}
+Tratamos \(\eps\) como operador efectivo que modula observables (ver Latentaxis v1 en \Cref{sec:latentaxis}).
+
+\section{Observables}\label{sec:obs}
+Matriz de observables: dinámica de fase, espectros, correlaciones.
+
+\section{Latentaxis v1: Entropía de fase \texorpdfstring{\(S_{\!p}\)}{Sp}}
+\label{sec:latentaxis}
+Sea una discretización espacial \(\{x_i\}\) y una densidad \(p_i(t)\) (normalizada)
+asociada al campo \(\psi(x,t)\) o a un funcional derivado. Definimos
+\begin{equation}
+S_{\!p}(t) \equiv -\sum_i p_i(t)\,\ln p_i(t), \qquad \sum_i p_i(t)=1.
+\label{eq:latentaxis-entropy}
+\end{equation}
+El \textit{índice de coherencia} es \(C(t)=\exp[-\Delta S_{\!p}(t)]\),
+con \(\Delta S_{\!p}(t)=S_{\!p}(t)-S_{\!p}^{\,\mathrm{ref}}\).
+La hipótesis operativa: \(\eps \uparrow \Rightarrow \Delta S_{\!p}\uparrow\) y \(C\downarrow\).
+
+\printbibliography
+\end{document}
