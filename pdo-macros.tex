@@ -3,6 +3,9 @@
 % Estados de evidencia
 \newcommand{\Assumed}[1]{\textbf{[ASUMIDO]}~#1}
 \newcommand{\Prior}[1]{\textbf{[PRIOR]}~#1}
+\providecommand{\mpl}{M_\mathrm{Pl}}
+\providecommand{\PDOsign}{(-,+,+,+)}
+
 \newcommand{\Posterior}[1]{\textbf{[POSTERIOR]}~#1}
 \newcommand{\Verified}[1]{\textbf{[VERIFICADO]}~#1}
 % Necesidades
@@ -10,4 +13,4 @@
 \newcommand{\NeedsData}{\textbf{[NECESITA DATOS]}}
 \newcommand{\NeedsGauge}{\textbf{[NECESITA GRUPO]}}
 % Gating suave
-\newcommand{\gate}[2]{\frac{1}{2}\left(1+\tanh\left(\frac{#1-#2}{1}\right)\right)}
+\newcommand{\gate}[3]{\mathrm{gate}\!\left(#1; #2,#3\right)}
