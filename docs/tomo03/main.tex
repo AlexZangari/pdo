@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage{graphicx,xcolor}
+\usepackage[acronym]{glossaries}
+\usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
+
+\input{../pdo-conventions.tex}
+\addbibresource{../bib/references.bib}
+\makeglossaries
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\sisetup{detect-all, per-mode=symbol, separate-uncertainty=true}
+
+\title{Tomo 3 — Ecuación Unificada y Estadística del PDO}
+\author{Proyecto PDO}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Ecuación Unificada}\label{sec:unificada}
+Proponemos una representación compacta para las variantes base, \(\eps\) estática y \(\eps\) dinámica:
+\begin{equation}
+ \mathcal{F}[\psi;\eps] \equiv \mathcal{D}[\psi] + \eps\,\mathcal{O}[\psi] + \mathcal{N}[\psi;\eps] = 0,
+ \label{eq:ecuacion-unificada}
+\end{equation}
+ donde \(\mathcal{D}\) es el operador lineal principal, \(\mathcal{O}\) el término efectivo controlado por \(\eps\) y \(\mathcal{N}\) agrupa no linealidades/perturbaciones.
+
+\section{Observables y Latentaxis}\label{sec:obs}
+Usamos la entropía de fase \(S_{\!p}\) como observable operativo (Latentaxis v1), ver \Cref{eq:Sp}.
+\begin{equation}
+ S_{\!p}(t) = -\sum_i p_i(t)\ln p_i(t), \quad p_i(t)=\frac{|\psi(x_i,t)|^2}{\sum_j |\psi(x_j,t)|^2}.
+ \label{eq:Sp}
+\end{equation}
+El índice \(C(t)=\exp\!\big[-(S_{\!p}(t)-S_{\!p}^{\rm ref})\big]\) cuantifica coherencia.
+
+\section{Estadística de modelos}\label{sec:stat}
+Para comparar variantes (con/sin \(\eps\)), reportamos \(\Delta \mathrm{AIC}\) y \(\Delta \mathrm{BIC}\):
+\begin{align}
+ \mathrm{AIC} &= 2k - 2\ln\hat{L}, &
+ \mathrm{BIC} &= k\ln n - 2\ln\hat{L}.
+\end{align}
+Las decisiones no se basan en “mejor ajuste” aislado sino en evidencia relativa (AIC/BIC).
+
+\section{Bibliografía}
+\printbibliography
+
+\end{document}
